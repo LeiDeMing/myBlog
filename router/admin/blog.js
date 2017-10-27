@@ -8,8 +8,10 @@ var express=require('express'),
     multiparty = require('multiparty'),
     mongoDB=require('../../db/db.js');
 
-
 router.get('/',function(req,res){
+    res.render('admin/blog/index')
+});
+router.get('/blogList',function(req,res){
     // mongoDB.find('article',{},{},function(err,data){
     //     if(err) throw err;
     //     res.render('admin/blog/index',{list:data});
@@ -37,7 +39,7 @@ router.get('/',function(req,res){
         }
     },function(err,results){
         if(err) throw err;
-        res.render('admin/blog/index',{
+        res.render('admin/blog/blogList',{
             list:results.list,
             page:page,
             kind:results.kind,
@@ -86,7 +88,7 @@ router.post('/doEdit',function(req,res){
         };
         mongoDB.update('article',{"_id":ObjectID(id)},json,function(err,data){
             if(err) throw err;
-            res.redirect('/admin/blog')
+            res.redirect('/admin/blog/blogList')
         })
     });
 });
@@ -95,7 +97,7 @@ router.get('/remove',function(req,res){
     var id=req.query.id;
     mongoDB.remove('article',{"_id":ObjectID(id)},function(err,result){
         if(err) throw err;
-        res.redirect('/admin/blog');
+        res.redirect('/admin/blog/blogList');
     })
 });
 module.exports=router;

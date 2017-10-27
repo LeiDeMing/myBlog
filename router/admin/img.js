@@ -130,6 +130,53 @@ router.post('/doEdit',function(req,res){
     });
 });
 
+router.get('/search',function(req,res){
+    mongoDB.find('imgKind',function(err,data){
+        if(err) throw err;
+        res.render('admin/img/search',{
+            list:data,
+            show:0
+        })
+    });
+});
+
+router.post('/search',function(req,res){
+    var form=new multiparty.Form();
+    form.uploadDir='public/upload/img';
+    form.parse(req,function(err,fields,files){
+        var name=fields.keywords[0];
+        var kind=fields.kind[0];
+        console.log();
+        if(kind==='name'){
+            var keywords=name?{"name":{$regex:new RegExp(name)}}:{};
+            mongoDB.find('img',keywords,{},function(err,data){
+                if(err) throw err;
+                res.render('admin/img/search',{
+                    show:data,
+                });
+            })
+        }
+        if(kind==='kind'){
+            var keywords=name?{"kind":{$regex:new RegExp(name)}}:{};
+            mongoDB.find('img',keywords,{},function(err,data){
+                if(err) throw err;
+                res.render('admin/img/search',{
+                    show:data,
+                });
+            })
+        }
+        if(kind==='foundTime'){
+            var keywords=name?{"foundTime":{$regex:new RegExp(name)}}:{};
+            mongoDB.find('img',keywords,{},function(err,data){
+                if(err) throw err;
+                res.render('admin/img/search',{
+                    show:data,
+                });
+            })
+        }
+    });
+});
+
 router.get('/remove',function(req,res){
     var id=req.query.id;
     mongoDB.remove('img',{"_id":ObjectID(id)},function(err,result){
