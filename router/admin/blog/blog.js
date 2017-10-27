@@ -6,7 +6,7 @@ var express=require('express'),
     ObjectID=require('mongodb').ObjectID,
     async=require('async'),
     multiparty = require('multiparty'),
-    mongoDB=require('../../db/db.js');
+    mongoDB=require('../../../db/db.js');
 
 router.get('/',function(req,res){
     res.render('admin/blog/index')

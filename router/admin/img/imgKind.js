@@ -6,7 +6,7 @@ var express=require('express'),
     ObjectID=require('mongodb').ObjectID,
     bodyParser=require('body-parser'),
     multiparty = require('multiparty'),
-    mongoDB=require('../../db/db.js');
+    mongoDB=require('../../../db/db.js');
 
 
 

@@ -7,12 +7,12 @@ var express=require('express'),
     mongoDB=require('../db/db.js'),
     session=require('express-session'),
     fs=require('fs'),
-    userSuper=require('./admin/userSuper.js'),
+    userSuper=require('./admin/user/userSuper.js'),
     sendBlog=require('./admin/sendBlog.js'),
-    blogKind=require('./admin/blogKind.js'),
-    imgKind=require('./admin/imgKind.js'),
-    img=require('./admin/img.js'),
-    blog=require('./admin/blog.js');
+    blogKind=require('./admin/blog/blogKind.js'),
+    imgKind=require('./admin/img/imgKind.js'),
+    img=require('./admin/img/img.js'),
+    blog=require('./admin/blog/blog.js');
 
 
 router.use(function(req,res,next){

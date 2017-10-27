@@ -7,7 +7,7 @@ var express=require('express'),
     fs=require('fs'),
     bodyParser=require('body-parser'),
     multiparty = require('multiparty'),
-    mongoDB=require('../../db/db.js');
+    mongoDB=require('../../../db/db.js');
 
 router.get('/',function(req,res){
     res.render('admin/img/index');

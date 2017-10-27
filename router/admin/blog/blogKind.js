@@ -3,7 +3,7 @@
  */
 var express=require('express'),
     router=express.Router(),
-    mongoDB=require('../../db/db.js'),
+    mongoDB=require('../../../db/db.js'),
     ObjectID=require('mongodb').ObjectID,
     multiparty = require('multiparty');
 

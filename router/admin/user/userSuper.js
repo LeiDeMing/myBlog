@@ -7,7 +7,7 @@ var express = require('express'),
     md5 = require('md5'),
     fs=require('fs'),
     multiparty = require('multiparty'),
-    mongoDB = require('../../db/db.js');
+    mongoDB = require('../../../db/db.js');
 
 // 展示超级用户
 router.get('/', function (req, res) {
