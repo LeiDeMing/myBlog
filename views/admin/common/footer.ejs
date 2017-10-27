@@ -1,0 +1,51 @@
+<!--<script type="text/javascript" src="/js/bootstrap.js"></script>-->
+<script type="text/javascript">
+    window.onload = function(){
+        var config = {
+            vx: 4,
+            vy:  4,
+            height: 2,
+            width: 2,
+            count: 100,
+            color: "121, 162, 185",
+            stroke: "100,200,180",
+            dist: 6000,
+            e_dist: 20000,
+            max_conn: 10
+        }
+        CanvasParticle(config);
+        layui.use('element', function(){
+            var element = layui.element;
+        });
+//        var form = layui.form;
+        //监听提交
+//        form.on('submit(formDemo)', function(data){
+//            layer.msg(JSON.stringify(data.field));
+//            return false;
+//        });
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#sendTime' //指定元素
+                ,type: 'datetime'
+            });
+        });
+
+        $('#content').xheditor({
+            html5Upload: false,
+            upMultiple: '3',
+            tools:'full',
+            skin:'default',
+            width:500, height:300,
+            upImgUrl:"/admin/sendBlog/upload",
+            upImgExt:"jpg,jpeg,gif,png"
+        });
+    }
+</script>
+<script type="text/javascript" src="/js/admin/canvas-particle.js"></script>
+<script src="/xheditor/jquery/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script src="/xheditor/xheditor-1.2.2.min.js" charset="utf-8"></script>
+<script src="/xheditor/xheditor_lang/zh-cn.js" charset="utf-8"></script>
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/layui/layui.all.js"></script>

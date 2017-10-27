@@ -1,0 +1,30 @@
+
+
+<table class="layui-table" lay-size="lg">
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>分类</th>
+        <th>创建时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody class="superShow">
+    <% for(var x=0;x<list.length;x++){%>
+    <tr>
+        <td><%=x+1%></td>
+        <td><div><%=list[x].name%></div></td>
+        <td><%=list[x].foundTime%></td>
+        <td>
+            <a href="/admin/imgKind/kindEdit?id=<%=list[x]._id%>" class="layui-btn layui-btn-small layui-btn-normal">查看&修改</a>
+            <a href="/admin/imgKind/kindRemove?id=<%=list[x]._id%>" class="layui-btn layui-btn-small layui-btn-danger">删除</a>
+        </td>
+    </tr>
+    <%}%>
+    </tbody>
+</table>

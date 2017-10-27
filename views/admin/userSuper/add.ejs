@@ -1,0 +1,74 @@
+<% include ../common/header.ejs %>
+<body class="layui-layout-body">
+<link rel="stylesheet" href="/public/css/admin/userSuper/add.css">
+<div class="layui-layout layui-layout-admin">
+    <% include ../common/nav.ejs %>
+    <% include common/leftSide.ejs %>
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <form class="layui-form" action="/admin/userSuper/doAdd" method="post" style="max-width:400px;" enctype="multipart/form-data">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">账号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" required lay-verify="required" placeholder="请输入账号"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="pwd" required lay-verify="required" placeholder="请输入密码"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">权限</label>
+                    <div class="layui-input-block">
+                        <select name="auth" lay-verify="required" style="display:block;position:relative;top:10px;">
+                            <!--<option value=""></option>-->
+                            <option value="p1">p1</option>
+                            <option value="p2">p2</option>
+                            <option value="p3">p3</option>
+                        </select>
+                        <!--<div class="layui-unselect layui-form-select layui-form-selected">-->
+                            <!--<div class="layui-select-title"><input placeholder="请选择" value="" readonly=""-->
+                                                                   <!--class="layui-input layui-unselect" type="text"><i-->
+                                        <!--class="layui-edge"></i></div>-->
+                            <!--<dl class="layui-anim layui-anim-upbit" style="">-->
+                                <!--&lt;!&ndash;<dd lay-value="" class="layui-select-tips">请选择</dd>&ndash;&gt;-->
+                                <!--<dd lay-value="p1" class="layui-this">p1</dd>-->
+                                <!--<dd lay-value="p2" class="">p2</dd>-->
+                                <!--<dd lay-value="p3" class="">p3</dd>-->
+                            <!--</dl>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">创建时间</label>
+                    <div class="layui-input-block">
+                        <input type="text"  class="layui-input"  id="sendTime" required lay-verify="required" name="foundTime">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">头像</label>
+                    <div class="layui-input-block" id="profile">
+                        <img src="" alt="点我" id="profileImg">
+                        <input type="file" name="profile" value="" id="upProfile" required lay-verify="required">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <% include ../common/cor.ejs %>
+</div>
+</body>
+</html>
+<% include ../common/footer.ejs %>
+<script type="text/javascript" src="/js/admin/userSuper/add.js"></script>

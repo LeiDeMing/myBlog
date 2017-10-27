@@ -1,0 +1,43 @@
+<%include common/header.ejs%>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <% include common/nav.ejs%>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">XXXX</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表一</a></dd>
+                        <dd><a href="javascript:;">列表二</a></dd>
+                        <dd><a href="javascript:;">列表三</a></dd>
+                        <dd><a href="">超链接</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">XXXXX</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">XXXXX</a></dd>
+                        <dd><a href="javascript:;">XXXXXX</a></dd>
+                        <dd><a href="">XXXXXX</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">XXXXX</a></li>
+                <li class="layui-nav-item"><a href="">XXXXX</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">内容主体区域
+            内容主体区域内容主体区域
+
+        </div>
+    </div>
+    <%include common/cor.ejs%>
+</div>
+</body>
+</html>
+<%include common/footer.ejs%>

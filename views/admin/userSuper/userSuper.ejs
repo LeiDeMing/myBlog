@@ -1,0 +1,21 @@
+<%include ../common/header.ejs%>
+<body class="layui-layout-body">
+<link rel="stylesheet" href="/css/admin/userSuper/common.css">
+<div class="layui-layout layui-layout-admin">
+    <% include ../common/nav.ejs%>
+    <%include common/leftSide.ejs%>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <fieldset class="layui-elem-field layui-field-title site-title">
+                <legend><a name="default">超级用户管理</a></legend>
+            </fieldset>
+            <%include common/content.ejs%>
+        </div>
+    </div>
+    <%include ../common/cor.ejs%>
+</div>
+</body>
+</html>
+<%include ../common/footer.ejs%>

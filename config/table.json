@@ -1,0 +1,60 @@
+{
+  "user_stats_data": {
+    "user_id": "Number",
+    "platform": "Number",
+    "user_first_time": "Number",
+    "create_time": "Number"
+  },
+  "room_data": {
+    "room_id": "String",
+    "room_type": "Number",
+    "user_id": "Number",
+    "player_num": "Number",
+    "diamond_num": "Number",
+    "normal_settle": "Number",
+    "single_settle": "Number",
+    "create_time": "Number"
+  },
+  "online_data": {
+    "server_id": "String",
+    "pf": "Number",
+    "player_num": "Number",
+    "room_list": "String",
+    "update_time": "Number"
+  },
+  "user":{
+    "name":"String",
+    "age":"String",
+    "classname":"String",
+    "sex":"String"
+  },
+  "admin":{
+    "name":"String",
+    "pwd":"String",
+    "foundTime":"String",
+    "exitTime":"String",
+    "auth":"String",
+    "profile":"String"
+  },
+  "article":{
+    "title":"String",
+    "kindId":"String",
+    "sendTime":"String",
+    "content":"String"
+  },
+  "blogKind":{
+    "name":"String",
+    "foundTime":"String"
+  },
+  "imgKind":{
+    "name":"String",
+    "foundTime":"String"
+  },
+  "img":{
+    "name":"String",
+    "kindId":"String",
+    "kind":"String",
+    "foundTime":"String",
+    "img":"String"
+  }
+}

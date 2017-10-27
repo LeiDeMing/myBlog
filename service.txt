@@ -1,0 +1,14 @@
+删除 ：mongod --dbpath F:\mongoData\data --logpath=F:\mongoData\logs\mongodb.log --directoryperdb --serviceName "MongoDB" --serviceDisplayName "MongoDB" --remove
+
+添加服务：
+mongod --dbpath F:\mongoData\data --logpath=F:\mongoData\logs\mongodb.log --install
+
+添加授权登陆服务：
+mongod --dbpath F:\mongoData\data --logpath=F:\mongoData\logs\mongodb.log -auth -service --install
+
+登陆 
+mongo --port 27017 -u root -p 940723 --authenticationDatabase admin  
+
+创建超级用户：db.createUser({user: "admin",pwd: "password",roles: [ { role: "root", db: "admin" } ]});
+
+创建普通用户：db.createUser({user: "tester",pwd: "password",roles: [{ role: "readWrite", db: "lxkdb" }]});  

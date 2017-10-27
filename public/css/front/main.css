@@ -1,0 +1,59 @@
+
+.banerColor{width:100%;background-color:#dcc5cb;}
+.baner{height:456px;margin:0 auto;width:1440px;/*box-shadow:-5px -5px 5px grey;*/}
+.lunboShow{height:456px;overflow:hidden;width:1440px;}
+.lunboShow img{width:1440px;height:456px;}
+.partNersColor{width:100%;background:#f7f7f7;}
+.partNers{text-align:center;height:auto;padding:33px 0;}
+.partNers_title{display:inline-block;}
+.partNers_title strong,.caseTitle strong{display:block;color:#000100;font-size:24px;margin-bottom:14px;}
+.aprtNers_title span,.caseTitle span{color:#99999b;font-size:14px;}
+.partNers_all{padding:20px 0;}
+.partners_list{border:1px solid #ececec;}
+.partners_list img{width:188px;height:100px;}
+.partners_box{width:188px;height:100px;float:left;}
+.partners_box a{width:100%;height:100%;display:block;}
+.partners_list01{background:url(../images/part1.jpg) no-repeat;}
+
+.advantageColor{background-color:#1a1b1f;width:100%;height:542px;}
+.advantage{padding:48px 0;height:auto;}
+.advantage_title{text-align:center;}
+.advantage_title strong{color:#e2e2e2;font-size:22px;display:block;margin-bottom:11px;}
+.advantage_title span{color:#e2e2e2;font-size:12px;}
+.content{background-color:#d0d0d2;padding:39px 44px;width:254px;position:relative;z-index: 1;text-align:center;margin-top:108px;margin-left:58px;}
+.advantage_list{width:1142px;}
+.content h2{color:#f85953;font-size:18px;margin-top:40px;}
+.content p{color:#000146;font-size:14px;line-height:30px;margin-top:16px;}
+.content .content_pic{z-index:9;position:absolute;top:-70px;left:104px;display:block;width:130px;height:131px;background:url(../images/img01.png) no-repeat;}
+.content .content_picSite1{background-position:0px 0px;}
+.content .content_picSite2{background-position:0px -162px;}
+.content .content_picSite3{background-position:0px -324px;}
+#content_Noleft{margin-left:0;}
+
+.caseBox{padding:51px 0;}
+.caseTitle{text-align:center;}
+.caseNav{text-align:center;margin-top:34px;}
+.caseNav ul{display:inline-block;margin-bottom:10px;}
+.caseNav ul li{float:left;}
+.caseNav ul li a{display:block;color:#fcf5fc;font-size:12px;text-align:center;padding:13px 72px;background-color:#666666;position:relative;}
+.caseNav ul li a span{display:none;width:13px;height:7px;background:url(../../images/front/case.png) no-repeat;position:absolute;bottom:-7px;right:90px;}
+.caseNav ul li a:hover{background-color:#f75a53;box-shadow:5px 5px 5px grey;}
+.caseNav ul li a:hover span{display:block;}
+.casePic{width:1142px;height:582px;}
+.case{margin:15px;width:350px;height:261px;}
+.case img{display:block;width:350px;height:256px;}
+#case_Noleft{margin-left:0;}
+#case_Noright{margin-right:0;}
+
+.newsColor{width:100%;background-color:#f2f2f2;}
+.news{height:284px;margin-right:42px;}
+.newsBox{padding:35px 0;}
+#news_Noleft{margin-left:0;}
+.news h3{color:#020100;font-size:16px;margin-bottom:22px;font-weight:bold;}
+.news ul{height:180px;width:100%;}
+.news ul li{overflow:hidden;line-height:30px;width:334px;}
+.news ul li a{color:#898788;font-size:14px;float:left;}
+.news ul li a:hover{color:red;}
+.news ul li span{color:#898788;font-size:12px;float:right;display:inline-block;margin-left:54px;}
+.news .newsMore a{color:#fef3ff;font-size:12px;height:32px;display:inline-block;background:#f85953;text-align:center;line-height:32px;border-radius:4px;padding:0 12px;margin:17px 0 10px;box-shadow:3px 3px 3px grey;}
+.news .newsMore a:hover{box-shadow:5px 5px 5px grey;}

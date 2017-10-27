@@ -1,0 +1,69 @@
+<% include ../common/header.ejs %>
+<body class="layui-layout-body">
+<link rel="stylesheet" href="/public/css/admin/userSuper/add.css">
+<div class="layui-layout layui-layout-admin">
+    <% include ../common/nav.ejs %>
+    <% include common/leftSide.ejs %>
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <form class="layui-form" action="/admin/userSuper/doEdit" method="post" style="max-width:400px;" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%=list["_id"]%>">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">账号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" readonly required lay-verify="required" placeholder="请输入账号"
+                               autocomplete="off" class="layui-input" value="<%=list.name%>">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="pwd" required lay-verify="required" placeholder="请输入密码"
+                               autocomplete="off" class="layui-input" value="<%=list.pwd%>">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">权限</label>
+                    <div class="layui-input-block">
+                        <select autocomplete="off" name="auth" lay-verify="required" style="display:block;position:relative;top:10px;" >
+                            <!--<option value=""></option>-->
+                            <option value="p1" <%if(list.auth==="p1"){%>selected<%}%>>p1</option>
+                            <option value="p2" <%if(list.auth==="p2"){%>selected<%}%>>p2</option>
+                            <option value="p3" <%if(list.auth==="p3"){%>selected<%}%>>p3</option>
+                        </select>
+                        <!--<div class="layui-unselect layui-form-select layui-form-selected">-->
+                            <!--<div class="layui-select-title"><input placeholder="请选择" value="" readonly=""-->
+                                                                   <!--class="layui-input layui-unselect" type="text"><i-->
+                                        <!--class="layui-edge"></i></div>-->
+                            <!--<dl class="layui-anim layui-anim-upbit" style="">-->
+                                <!--&lt;!&ndash;<dd lay-value="" class="layui-select-tips">请选择</dd>&ndash;&gt;-->
+                                <!--<dd lay-value="p1" class="layui-this">p1</dd>-->
+                                <!--<dd  class="">p2</dd>-->
+                                <!--<dd  class="">p3</dd>-->
+                            <!--</dl>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">头像</label>
+                    <div class="layui-input-block" id="profile">
+                        <img src="\<%=list.profile%>" alt="点我" id="profileImg">
+                        <input type="file" name="profile" value="" id="upProfile" >
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <% include ../common/cor.ejs %>
+</div>
+</body>
+</html>
+<% include ../common/footer.ejs %>
+<script type="text/javascript" src="/js/admin/userSuper/add.js"></script>
