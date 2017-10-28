@@ -40,7 +40,8 @@
     "title":"String",
     "kindId":"String",
     "sendTime":"String",
-    "content":"String"
+    "content":"String",
+    "state":"String"
   },
   "blogKind":{
     "name":"String",

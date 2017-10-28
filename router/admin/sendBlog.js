@@ -22,6 +22,7 @@ router.post('/getBlog',function(req,res){
         var json={
             title:fields['title'][0],
             kindId:fields['kindId'][0],
+            state:fields['state'][0],
             sendTime:fields['sendTime'][0],
             content:fields['content'][0]
         };

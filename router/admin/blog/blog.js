@@ -83,6 +83,7 @@ router.post('/doEdit',function(req,res){
         var json={
             title:fields['title'][0],
             kindId:fields['kindId'][0],
+            state:fields['state'][0],
             sendTime:fields['sendTime'][0],
             content:fields['content'][0]
         };
@@ -91,6 +92,14 @@ router.post('/doEdit',function(req,res){
             res.redirect('/admin/blog/blogList')
         })
     });
+});
+
+router.get('/push',function(req,res){
+   var id=req.query.id;
+   mongoDB.update('article',{"_id":ObjectID(id)},{"state":"发布"},function(err,resutl){
+       if(err) throw err;
+       res.redirect('/admin/blog/blogList')
+   })
 });
 
 router.get('/remove',function(req,res){

@@ -12,6 +12,7 @@
                 <!--<th>序号</th>-->
                 <th>标题</th>
                 <th>分类</th>
+                <th>状态</th>
                 <th>创建时间</th>
                 <th>操作</th>
             </tr>
@@ -25,9 +26,11 @@
                         <td><%=kind[y].name%></td>
                     <%}%>
                 <%}%>
+                <td><%=list[x].state%></td>
                 <td><%=list[x].sendTime%></td>
                 <!--<td><div style="max-width:100px;max-height:40px;overflow:hidden;"><%=list[x].content%>...</div></td>-->
                 <td>
+                    <a href="/admin/blog/push?id=<%=list[x]._id%>" class="layui-btn layui-btn-small">发布</a>
                     <a href="/admin/blog/edit?id=<%=list[x]._id%>" class="layui-btn layui-btn-small layui-btn-normal">查看&修改</a>
                     <a href="/admin/blog/remove?id=<%=list[x]._id%>" class="layui-btn layui-btn-small layui-btn-danger">删除</a>
                 </td>

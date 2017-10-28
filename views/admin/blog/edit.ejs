@@ -1,4 +1,15 @@
 <% include ../common/header.ejs %>
+<style type="text/css">
+    body{
+        background-image:url('/css/admin/globalBG.jpg');
+        background-size:100%;
+        background-repeat:repeat-x;
+    }
+    label{
+        color:#fff;
+    }
+</style>
+<body class="">
 <div class="layui-container" style="max-width:600px;margin-top:40px;">
     <a class="layui-btn layui-btn-small layui-btn-normal" style="position:relative;left:110px;top:-10px;" href="/admin/blog"><i class="layui-icon"></i></a>
     <form class="layui-form" action="/admin/blog/doEdit" method="post" enctype="multipart/form-data">
@@ -25,6 +36,15 @@
             <a style="float:left;position:relative;top:10px;left:10px;" class="layui-btn layui-btn-mini layui-btn-radius layui-btn-normal" href="/admin/blogKind/kindAdd">添加分类</a>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                <select autocomplete="off" name="state" lay-verify="required" style="display:block;position:relative;top:10px;" >
+                    <option value="未发布" <%if(list.state=='未发布'){%>selected<%}%>>未发布</option>
+                    <option value="发布" <%if(list.state=='发布'){%>selected<%}%>>发布</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">发布时间</label>
             <div class="layui-input-block">
                 <input type="text"  class="layui-input"  id="sendTime" required lay-verify="required" name="sendTime" value="<%=list.sendTime%>">
@@ -44,6 +64,7 @@
         </div>
     </form>
 </div>
+</body>
 </html>
 <% include ../common/footer.ejs %>
 <!--<script type="text/javascript" src="/js/admin/sendBlog.js"></script>-->

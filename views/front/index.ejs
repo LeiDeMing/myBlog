@@ -1,120 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/css/front/reset.css" />
-    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="/css/front/common.css" />
-    <link rel="stylesheet" href="/css/front/main.css" />
-</head>
+<% include common/header.ejs %>
 <body>
-<div class="header middle clearfix">
-    <div class="header_left fl">
-        <h1 class="fl"><a href="index.html" title="欢迎来到麦田国际">麦田国际</a></h1>
-        <div class="header_title fl">
-            <span class="fl"></span>
-            <strong>奉行卓越品质</strong>
-            <strong>则可拥抱世界</strong>
-        </div>
-    </div>
+<div class="layui-container">
+    <div class="layui-fluid">
+        <nav class="layui-header">
+            <ul class="layui-nav" lay-filter="" style="background-color:#009688;">
+                <li class="layui-nav-item"><a href=""></a></li>
+                <li class="layui-nav-item"><a href=""></a></li>
+                <li class="layui-nav-item"><a href=""></a></li>
 
-    <div class="header_right fr">
-        <ul class="clearfix">
-            <li><a href="">网站首页</a></li>
-            <li><a href="about.html">关于我们</a></li>
-            <li><a href="">新闻资讯</a></li>
-            <li><a href="case.html">成功案例</a></li>
-            <li><a href="service.html">尊享服务</a></li>
-            <li><a href="">招商加盟</a></li>
-            <li><a href="">联系我们</a></li>
-
-        </ul>
-    </div>
-</div>
-<div class="banerColor">
-    <div class="baner">
-        <%include lunbo.ejs%>
-    </div>
-</div>
-<div class="partNersColor">
-    <div class="middle">
-        <div class="partNers">
-            <div class="partNers_title">
-                <strong>战略合作 Strategic partners</strong>
-                <span>真诚、共赢、无微不至</span>
-            </div>
-            <div class="partNers_all clearfix">
-               <%include partNers/partNers_list.ejs%>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="advantageColor">
-    <div class="middle advantage">
-        <div class="advantage_title">
-            <strong>我们的优势 Our Advantages</strong>
-            <span>创独一无二的设计，造国际品质的产品，行无微不至的服务</span>
-        </div>
-        <div class="advantage_list clearfix">
-            <div class="content fl" id="content_Noleft">
-                <span class="content_pic content_picSite1"></span>
-                <h2>我们的设计 Our Design</h2>
-                <p>从实地到方案敲定再到设计出图，每一步都有优秀的设计团队全程跟踪，为您打造出最合适的作品是最诚恳的义务。</p>
-            </div>
-            <div class="content fl" >
-                <span class="content_pic content_picSite2"></span>
-                <h2>我们的设计 Our Design</h2>
-                <p>从实地到方案敲定再到设计出图，每一步都有优秀的设计团队全程跟踪，为您打造出最合适的作品是最诚恳的义务。</p>
-            </div>
-            <div class="content fl" >
-                <span class="content_pic content_picSite3"></span>
-                <h2>我们的设计 Our Design</h2>
-                <p>从实地到方案敲定再到设计出图，每一步都有优秀的设计团队全程跟踪，为您打造出最合适的作品是最诚恳的义务。</p>
-            </div>
-
-        </div>
-    </div>
-</div>
-<div class="middle">
-    <div class="caseBox clearfix">
-        <div class="caseTitle">
-            <strong>成功案例 Succeeful Case</strong>
-            <span>创独一无二的设计，造国际品质的产品，行无微不至的服务</span>
-        </div>
-        <div class="caseNav" id="caseNav">
-            <ul class="clearfix">
-                <%include case/caseNav.ejs%>
+                <li class="layui-nav-item"><a href="">关于我</a></li>
             </ul>
-        </div>
-        <div class="casePic clearfix" id="casePic">
+        </nav>
+        <div class="layui-main">
+
 
         </div>
-    </div>
-</div>
-<%include ./news/news.ejs%>
-<div class="footerColor">
-    <div class="footer middle">
-        <div class="footer_nav ">
-            <ul class="clearfix">
-                <li><a href="">网站首页</a></li>
-                <li><a href="">关于我们</a></li>
-                <li><a href="">产品展示</a></li>
-                <li><a href="">客户案例</a></li>
-                <li><a href="">新闻资讯</a></li>
-                <li><a href="">帮助中心</a></li>
-                <li><a href="">解决方案</a></li>
-                <li><a href="" id="footer_noborder">联系我们</a></li>
-            </ul>
-        </div>
-        <div class="footer_cop">
-            <span>Copyright &copy; 2002-2015 上海机械设备服务有限公司 版权所有 Power by Nei</span>
-        </div>
-        <div class="footer_site">
-            <span>电话：15918778920 E-mail：89898981@qq.com 地址：上海市沙河广园东路1858新天地服装城</span>
-        </div>
+        <%include ../admin/common/cor.ejs%>
     </div>
 </div>
 </body>
 </html>
-<%include common/footer.ejs%>
+<% include common/footer.ejs %>
