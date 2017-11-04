@@ -1,0 +1,50 @@
+.layui-main{
+    padding-top:60px;
+    width:760px
+}
+.layui-main>div{
+    width:100%;
+    height:210px;
+    border:2px solid #1C2D3F;
+    border-radius:10px;
+    margin:15px 0;
+    box-shadow:0 0 5px grey;
+    box-sizing:border-box;
+    padding:15px;
+    position:relative;
+}
+.layui-main>div:hover{
+    border:2px solid dimgray;
+    box-shadow:0 0 10px grey;
+}
+.layui-main>div:hover .layui-btn{
+    background-color:#1E9FFF;
+}
+.layui-main>div .title{
+    line-height:30px;
+}
+.layui-main>div .title>div:first-of-type>div>em{
+    margin:0 10px;
+}
+.layui-main>div>div:nth-of-type(2) p{
+    width:680px;
+    height:76px;
+    overflow:hidden;
+    margin:0 auto;
+}
+.layui-main>div>div:nth-of-type(3){
+    margin-top:10px;
+}
+.layui-main>div .title h3{
+    font-size:24px;
+    font-weight:500;
+    margin-right:80px;
+}
+.layui-main>div>a{
+    position:absolute;
+    display:block;
+    bottom:0;
+    right:0;
+    top:0;
+    left:0;
+}

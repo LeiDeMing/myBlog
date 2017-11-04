@@ -159,13 +159,27 @@ DB.prototype.remove = function (table_name, conditions, callback) {
  */
 DB.prototype.find = function (table_name, conditions, fields, callback) {
     var node_model = this.getConnection(table_name);
-    node_model.find(conditions || {}, fields || null, {}, function (err, res) {
+    node_model.find(conditions || {}, fields || null || {}, function (err, res) {
         if (err) {
             callback(err);
         } else {
             callback(null, res);
         }
     });
+};
+
+
+DB.prototype.findOnSort = function (table_name, conditions, fields, keywords,callback) {
+    var node_model = this.getConnection(table_name);
+    node_model.find(conditions || {}, fields || null || {})
+        .sort(keywords)
+        .exec(function (err, res) {
+            if (err) {
+                callback(err);
+            } else {
+                callback(null, res);
+            }
+        });
 };
 
 /**

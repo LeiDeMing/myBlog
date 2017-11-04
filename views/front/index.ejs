@@ -2,22 +2,30 @@
 <body>
 <div class="layui-container">
     <div class="layui-fluid">
-        <nav class="layui-header">
-            <ul class="layui-nav" lay-filter="" style="background-color:#009688;">
-                <li class="layui-nav-item"><a href=""></a></li>
-                <li class="layui-nav-item"><a href=""></a></li>
-                <li class="layui-nav-item"><a href=""></a></li>
-
-                <li class="layui-nav-item"><a href="">关于我</a></li>
-            </ul>
-        </nav>
+        <%include common/nav.ejs%>
         <div class="layui-main">
-
-
+            <%for(var x=0;x<list.length;x++){%>
+            <div class="blog">
+                <div class="title clearfix">
+                    <h3><%=list[x].title%></h3>
+                    <div class="info clearfix">
+                        <div class="fr"><em class="dimBlue">作者：<span>neideming</span></em><em>发表时间：<span><%=list[x].sendTime%></span></em><em>浏览：<span>312</span></em></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <p><%=list[x].content%></p>
+                </div>
+                <div class="more clearfix">
+                    <button class="layui-btn layui-btn-small layui-btn-radius fr">了解更多</button>
+                </div>
+                <a href=""></a>
+            </div>
+            <%}%>
         </div>
         <%include ../admin/common/cor.ejs%>
     </div>
 </div>
+
 </body>
 </html>
 <% include common/footer.ejs %>

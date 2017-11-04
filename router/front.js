@@ -4,13 +4,18 @@
 var express=require('express'),
     router=express.Router(),
     async=require('async'),
+    ObjectID=require('mongodb').ObjectID,
     mongoDB=require('../db/db.js');
 
 
 
 router.get('/',function(req,res){
-    res.render('front/index');
-
+    mongoDB.findOnSort('article',{},{},{sendTime:-1},function(err,data){
+        if(err) throw err;
+        res.render('front/index',{
+            list:data
+        });
+    });
 });
 
 
