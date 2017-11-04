@@ -4,7 +4,7 @@ var fs = require('fs'),
     logger = require('pomelo-logger').getLogger('mongodb-log');
 var options = {
     db_user: 'admin',
-    db_pwd: '******',    //数据密码
+    db_pwd: '123456',    //数据密码
     db_host: '127.0.0.1',
     db_port: '27017',
     db_name: 'myBlog'
