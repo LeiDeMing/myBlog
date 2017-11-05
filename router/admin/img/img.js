@@ -146,7 +146,6 @@ router.post('/search',function(req,res){
     form.parse(req,function(err,fields,files){
         var name=fields.keywords[0];
         var kind=fields.kind[0];
-        console.log();
         if(kind==='name'){
             var keywords=name?{"name":{$regex:new RegExp(name)}}:{};
             mongoDB.find('img',keywords,{},function(err,data){

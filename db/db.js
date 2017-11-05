@@ -106,7 +106,7 @@ DB.prototype.update = function (table_name, conditions, update_fields, callback)
         if (err) {
             if (callback) callback(err);
         } else {
-            if (callback) callback(null, err);
+            if (callback) callback(null, res);
         }
     });
 };
@@ -167,7 +167,14 @@ DB.prototype.find = function (table_name, conditions, fields, callback) {
         }
     });
 };
-
+/**
+ * 查询数据
+ * @param table_name 表名
+ * @param conditions 查询条件
+ * @param fields 待返回字段
+ * @param callback 回调方法
+ * @param keywords 排序关键字
+ */
 
 DB.prototype.findOnSort = function (table_name, conditions, fields, keywords,callback) {
     var node_model = this.getConnection(table_name);

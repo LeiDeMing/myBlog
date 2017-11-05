@@ -1,0 +1,25 @@
+<% include common/header.ejs %>
+    <link rel="stylesheet" href="/css/front/blog.css">
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-fluid">
+        <%include common/nav.ejs%>
+        <div class="layui-main">
+            <div class="title">
+                <h1><%=list.title%></h1>
+                <div class="info clearfix">
+                    <div class="fr"><em class="dimBlue">作者：<span>neideming</span></em><em>发表时间：<span><%=list.sendTime%></span></em><em>浏览：<span><%=list.browse%></span>次</em></div>
+                </div>
+            </div>
+            <div class="content">
+                <%-list.content%>
+            </div>
+        </div>
+        <%include ../admin/common/cor.ejs%>
+    </div>
+</div>
+
+</body>
+</html>
+<% include common/footer.ejs %>

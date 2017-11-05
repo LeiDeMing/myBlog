@@ -41,7 +41,8 @@
     "kindId":"String",
     "sendTime":"String",
     "content":"String",
-    "state":"String"
+    "state":"String",
+    "browse":"Number"
   },
   "blogKind":{
     "name":"String",

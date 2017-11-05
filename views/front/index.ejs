@@ -1,4 +1,6 @@
 <% include common/header.ejs %>
+    <link rel="stylesheet" href="/css/front/index.css">
+</head>
 <body>
 <div class="layui-container">
     <div class="layui-fluid">
@@ -9,7 +11,7 @@
                 <div class="title clearfix">
                     <h3><%=list[x].title%></h3>
                     <div class="info clearfix">
-                        <div class="fr"><em class="dimBlue">作者：<span>neideming</span></em><em>发表时间：<span><%=list[x].sendTime%></span></em><em>浏览：<span>312</span></em></div>
+                        <div class="fr"><em class="dimBlue">作者：<span>neideming</span></em><em>发表时间：<span><%=list[x].sendTime%></span></em><em>浏览：<span><%=list[x].browse%></span>次</em></div>
                     </div>
                 </div>
                 <div class="content">
@@ -18,7 +20,7 @@
                 <div class="more clearfix">
                     <button class="layui-btn layui-btn-small layui-btn-radius fr">了解更多</button>
                 </div>
-                <a href=""></a>
+                <a href="/blog/blogList?id=<%=list[x]._id%>"></a>
             </div>
             <%}%>
         </div>

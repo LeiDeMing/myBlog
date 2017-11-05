@@ -1,0 +1,20 @@
+.layui-main h1 {
+    padding-top: 10px;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+.layui-main .title {
+    border-bottom: 1px dashed #1C2D3F;
+    padding-bottom: 10px;
+    margin-bottom:16px;
+}
+
+.layui-main .info {
+    font-size: 16px;
+    padding-right: 4px;
+}
+
+.layui-main .info > div em:nth-of-type(2) {
+    margin: 0 10px;
+}

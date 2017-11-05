@@ -1,10 +1,14 @@
 
 body{
-    background-color:#fff;
+    background-color:#F5F5D5;
     color:#1C2D3F;
 }
 .layui-main{
     min-height:500px;
+}
+.layui-main{
+    padding-top:60px;
+    width:760px
 }
 .layui-header{
     position:fixed;
@@ -24,4 +28,9 @@ body{
 .layui-footer{
     padding-top:10px;
     height:80px;
+}
+.layui-footer{
+    width:760px;
+    margin:20px auto 0;
+    border-top:1px dashed #1C2D3F;
 }
