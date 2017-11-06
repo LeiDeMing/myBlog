@@ -41,11 +41,35 @@ body{
 }
 @media (max-width:539px){
     .layui-main{
-        padding-top:180px;
+        padding-top:60px;
+    }
+    .layui-header>ul>li:first-of-type a h1{
+        display:none;
+    }
+    .layui-header>ul>li:nth-of-type(2){
+        margin-left:0;
+    }
+}
+@media (max-width:459px){
+    .layui-main{
+        padding-top:60px;
+    }
+    .layui-nav .layui-nav-item a{
+        padding:0 10px;
+    }
+}
+@media (max-width:339px){
+    .layui-nav .layui-nav-item a{
+        padding:0 4px;
     }
 }
 @media (max-width:312px){
     .layui-main{
-        padding-top:240px;
+        padding-top:60px;
+    }
+}
+@media (max-width:267px){
+    .layui-nav .layui-nav-item a{
+        padding:0 1px;
     }
 }
