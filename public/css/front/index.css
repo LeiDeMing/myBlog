@@ -23,7 +23,7 @@
     margin:0 10px;
 }
 .layui-main>div>div:nth-of-type(2){
-    width:680px;
+    width:98%;
     height:76px;
     overflow:hidden;
     margin:0 auto;
@@ -34,7 +34,7 @@
 .layui-main>div .title h3{
     font-size:24px;
     font-weight:500;
-    margin-right:80px;
+    margin-right:10%;
 }
 .layui-main>div>a{
     position:absolute;
@@ -43,4 +43,23 @@
     right:0;
     top:0;
     left:0;
+}
+
+@media (max-width:648px){
+    .layui-main>div>div:nth-of-type(3){
+        margin-top:-8px;
+    }
+}
+@media (max-width:397px){
+    .layui-main>div>div:nth-of-type(3){
+        margin-top:-36px;
+    }
+}
+@media (max-width:312px){
+    .layui-main>div .title .info{
+        display:none;
+    }
+    .layui-main>div>div:nth-of-type(3){
+        margin-top:50px;
+    }
 }

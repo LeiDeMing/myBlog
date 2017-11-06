@@ -8,7 +8,7 @@ body{
 }
 .layui-main{
     padding-top:60px;
-    width:760px
+    width:82%;
 }
 .layui-header{
     position:fixed;
@@ -30,7 +30,22 @@ body{
     height:80px;
 }
 .layui-footer{
-    width:760px;
+    width:80%;
     margin:20px auto 0;
     border-top:1px dashed #1C2D3F;
+}
+@media (max-width:953px){
+    .layui-main{
+        padding-top:120px;
+    }
+}
+@media (max-width:539px){
+    .layui-main{
+        padding-top:180px;
+    }
+}
+@media (max-width:312px){
+    .layui-main{
+        padding-top:240px;
+    }
 }
