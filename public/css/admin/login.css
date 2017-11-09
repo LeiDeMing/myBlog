@@ -1,6 +1,4 @@
-.form-horizontal{
-    margin-top:50px;
+.login{
+	max-width:400px;
+	margin:60px auto;
 }
-.container{
-     max-width:400px;
- }

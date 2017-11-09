@@ -3,6 +3,7 @@ body{
     background-color:#F5F5D5;
     color:#1C2D3F;
 }
+
 .layui-main{
     min-height:500px;
 }
@@ -16,11 +17,15 @@ body{
     left:0;
     width:100%;
 }
+.layui-header .layui-nav{
+    background-color:#9CAEBF;
+}
 .layui-header>ul>li:first-of-type a h1{
-    width:373px;
+    /*width:373px;*/
     height:56px;
-    background:url("/images/front/logo.jpg") no-repeat;
-    text-indent:-9999px;
+    font-size:26px;
+    /*background:url("/images/front/logo.jpg") no-repeat;*/
+    /*text-indent:-9999px;*/
 }
 .layui-header>ul>li:nth-of-type(2){
     margin-left:120px;
