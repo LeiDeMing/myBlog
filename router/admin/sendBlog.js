@@ -6,6 +6,7 @@ var express=require('express'),
     bodyParser=require('body-parser'),
     ObjectID=require('mongodb').ObjectID,
     multiparty = require('multiparty'),
+    async=require('async'),
     mongoDB=require('../../db/db.js');
 
 router.get('/',function(req,res){
@@ -27,10 +28,14 @@ router.post('/getBlog',function(req,res){
             sendTime:fields['sendTime'][0],
             content:fields['content'][0]
         };
-        mongoDB.save('article',json,function(err,data){
-            if(err) throw err;
-            res.redirect('/admin/blog')
+        mongoDB.findById("blogKind",ObjectID(json.kindId),function(err,result){
+            json.kind=result.name;
+            mongoDB.save('article',json,function(err,data){
+                if(err) throw err;
+                res.redirect('/admin/blog')
+            })
         })
+
     });
 });
 

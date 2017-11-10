@@ -42,7 +42,8 @@
     "sendTime":"String",
     "content":"String",
     "state":"String",
-    "browse":"Number"
+    "browse":"Number",
+    "kind":"String"
   },
   "blogKind":{
     "name":"String",

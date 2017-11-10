@@ -30,7 +30,7 @@ router.get('/blogList',function(req,res){
           });
         },
         list:function(callback){
-            mongoDB.findSkip('article',{},{"title":1},{
+            mongoDB.findSkip('article',{},{sendTime:-1},{
                 page:page,
                 pageSize:pageSize
             },function(err,data){
@@ -100,6 +100,53 @@ router.get('/push',function(req,res){
        if(err) throw err;
        res.redirect('/admin/blog/blogList')
    })
+});
+
+router.get('/search',function(req,res){
+    mongoDB.find('article',function(err,data){
+        if(err) throw err;
+        res.render('admin/blog/search',{
+            list:data,
+            show:0
+        })
+    });
+});
+router.post('/search',function(req,res){
+    var form=new multiparty.Form();
+    form.uploadDir='public/upload/img';
+    form.parse(req,function(err,fields,files){
+        var title=fields.keywords[0];
+        var kind=fields.kind[0];
+
+        if(kind==='title'){
+            var keywords=title?{"title":{$regex:new RegExp(title)}}:{};
+            mongoDB.find('article',keywords,{},function(err,data){
+                if(err) throw err;
+                console.log(data);
+                res.render('admin/blog/search',{
+                    show:data,
+                });
+            })
+        }
+        if(kind==='kind'){
+            var keywords=title?{"kind":{$regex:new RegExp(title)}}:{};
+            mongoDB.find('article',keywords,{},function(err,data){
+                if(err) throw err;
+                res.render('admin/blog/search',{
+                    show:data,
+                });
+            })
+        }
+        if(kind==='sendTime'){
+            var keywords=title?{"sendTime":{$regex:new RegExp(title)}}:{};
+            mongoDB.find('article',keywords,{},function(err,data){
+                if(err) throw err;
+                res.render('admin/blog/search',{
+                    show:data,
+                });
+            })
+        }
+    });
 });
 
 router.get('/remove',function(req,res){

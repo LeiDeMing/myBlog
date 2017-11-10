@@ -150,7 +150,7 @@ router.post('/search',function(req,res){
             var keywords=name?{"name":{$regex:new RegExp(name)}}:{};
             mongoDB.find('img',keywords,{},function(err,data){
                 if(err) throw err;
-                res.render('admin/img/search',{
+                res.render('admin/blog/search',{
                     show:data,
                 });
             })
@@ -159,16 +159,16 @@ router.post('/search',function(req,res){
             var keywords=name?{"kind":{$regex:new RegExp(name)}}:{};
             mongoDB.find('img',keywords,{},function(err,data){
                 if(err) throw err;
-                res.render('admin/img/search',{
+                res.render('admin/blog/search',{
                     show:data,
                 });
             })
         }
         if(kind==='foundTime'){
-            var keywords=name?{"foundTime":{$regex:new RegExp(name)}}:{};
+            var keywords=name?{"sendTime":{$regex:new RegExp(name)}}:{};
             mongoDB.find('img',keywords,{},function(err,data){
                 if(err) throw err;
-                res.render('admin/img/search',{
+                res.render('admin/blog/search',{
                     show:data,
                 });
             })
