@@ -94,7 +94,6 @@ router.post('/doEdit', function (req, res) {
                 };
             }
             idUptate('admin',ObjectID(id),json);
-            console.log(req.session.adminInfo+"...."+data[0].name);
             if(req.session.adminInfo.name===data[0].name){
                 req.session.adminInfo=undefined;
                 res.redirect('/admin/login')

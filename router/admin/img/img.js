@@ -31,14 +31,17 @@ router.post('/doImgAdd',function(req,res){
             foundTime: fields['foundTime'][0],
             img: files.img[0].path
         };
-        mongoDB.findById('imgKind',ObjectID(json.kindId),function(err,data){
-            json.kind=data.name;
+        (()=>{
+            mongoDB.findById('imgKind',ObjectID(json.kindId),function(err,data){
+                json.kind=data.name;
+                
+            });
+        }).then(()=>{
             mongoDB.save('img',json,function(err,result){
                 if(err) throw err;
                 res.redirect('/admin/img')
             })
         });
-
     });
 });
 
@@ -119,14 +122,17 @@ router.post('/doEdit',function(req,res){
                 img
             };
         }
-        mongoDB.findById('imgKind',ObjectID(json.kindId),function(err,data){
-            json.kind=data.name;
+        (()=>{
+            mongoDB.findById('imgKind',ObjectID(json.kindId),function(err,data){
+                json.kind=data.name;
+                
+            });
+        }).then(()=>{
             mongoDB.update('img',{"_id":ObjectID(id)},json,function(err,result){
                 if(err) throw err;
                 res.redirect('/admin/img/imgList?page='+page)
             })
         });
-
     });
 });
 

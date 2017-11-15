@@ -28,14 +28,17 @@ router.post('/getBlog',function(req,res){
             sendTime:fields['sendTime'][0],
             content:fields['content'][0]
         };
-        mongoDB.findById("blogKind",ObjectID(json.kindId),function(err,result){
-            json.kind=result.name;
+        (()=>{
+            mongoDB.findById("blogKind",ObjectID(json.kindId),function(err,result){
+                json.kind=result.name;
+                
+            })
+        }).then(()=>{
             mongoDB.save('article',json,function(err,data){
                 if(err) throw err;
                 res.redirect('/admin/blog')
             })
         })
-
     });
 });
 

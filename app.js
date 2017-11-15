@@ -27,7 +27,6 @@ app.use(session({
 }));
 
 app.set('view engine','ejs');
-
 app.use('/admin',admin);
 app.use('/api',api);
 app.use('/',front);
