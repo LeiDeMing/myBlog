@@ -1,8 +1,6 @@
 # myBlog
-博客管理
-2017/10/27 首次上传
-增加备忘录模块
-优化列表页
-优化查询
-增加留言模块
-增加web安全模块
+git clone https://github.com/Eaststart/myBlog.git
+cd myBlog
+npm i
+http://localhost:3001/admin
+
