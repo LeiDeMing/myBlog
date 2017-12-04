@@ -74,8 +74,8 @@ router.get('/imgList',function(req,res){
 });
 
 router.get('/edit',function(req,res){
-    var id=req.query.id;
-    var page=req.query.page;
+    var id=req.query.id,
+    page=req.query.page;
     async.parallel({
         kind:function(callback){
             mongoDB.find('imgKind',function(err,data){

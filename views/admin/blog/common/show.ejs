@@ -14,13 +14,14 @@
                 <th>分类</th>
                 <th>状态</th>
                 <th>创建时间</th>
+                <th>下载文章</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody class="superShow">
             <% for(var x=0;x<list.length;x++){%>
             <tr>
-                <td><div class="blogTitle"><%=list[x].title%></div></td>
+                <td><span class="blogTitle"><%=list[x].title%></span></td>
                 <% for(var y=0;y<kind.length;y++){%>
                     <% if(list[x].kindId==kind[y]._id){%>
                         <td><%=kind[y].name%></td>
@@ -28,10 +29,10 @@
                 <%}%>
                 <td><%=list[x].state%></td>
                 <td><%=list[x].sendTime%></td>
-                <!--<td><div style="max-width:100px;max-height:40px;overflow:hidden;"><%=list[x].content%>...</div></td>-->
+                <td><a href=''>demo</a></td>
                 <td>
                     <a href="/admin/blog/push?id=<%=list[x]._id%>" class="layui-btn layui-btn-small">发布</a>
-                    <a href="/admin/blog/edit?id=<%=list[x]._id%>" class="layui-btn layui-btn-small layui-btn-normal">查看&修改</a>
+                    <a href="/admin/blog/edit?page=<%=page%>&id=<%=list[x]._id%>" class="layui-btn layui-btn-small layui-btn-normal">查看&修改</a>
                     <a href="/admin/blog/remove?id=<%=list[x]._id%>" class="layui-btn layui-btn-small layui-btn-danger">删除</a>
                 </td>
             </tr>

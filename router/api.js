@@ -40,14 +40,14 @@ router.post('/user',function(req,res){
 		});
 	}else{
 		if(req.body['__v']=='0'){
-		let id=req.body['_id']
+		var id=req.body['_id']
 		mongoDB.update('admin',{"_id":ObjectID(id)},req.body,function(err,data){
 			if(err) throw err;
 			console.log(data);
 			res.jsonp(1);
 		});
 	}else{
-		let json=req.body;
+		var json=req.body;
 	mongoDB.find('admin',{"name":json.name},function(err,resl){
 		if(resl.length>0){
 			res.jsonp(0)
@@ -66,7 +66,7 @@ router.post('/user',function(req,res){
 });
 
 router.get('/user',function(req,res){
-	let id=req.query.id;
+	var id=req.query.id;
 	if(id){
 		mongoDB.find('admin',{"_id":ObjectID(id)},function(err,data){
 			if(err) throw err;
@@ -81,5 +81,17 @@ router.get('/user',function(req,res){
 	
 })
 
+router.post('/admin',function(req,res){
+	var json=req.body;
+	if(json)
+	mongoDB.find('admin',{"name":json.ac},function(err,data){
+		if(err) throw err;
+		if(data[0].pwd===json.pwd){
+			res.jsonp(1);
+		}else{
+			res.jsonp(0);
+		}
+	})
+})
 
 module.exports=router;

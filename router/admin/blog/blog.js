@@ -50,7 +50,8 @@ router.get('/blogList', function (req, res) {
 });
 
 router.get('/edit', function (req, res) {
-    var id = req.query.id;
+    var id = req.query.id,
+        page=req.query.page;
 
     async.parallel({
         kind: function (callback) {
@@ -70,7 +71,8 @@ router.get('/edit', function (req, res) {
         res.render('admin/blog/edit', {
             kind: results.kind,
             list: results.list,
-            id: id
+            id: id,
+            page
         })
     });
 });
@@ -85,11 +87,12 @@ router.post('/doEdit', function (req, res) {
             kindId: fields['kindId'][0],
             state: fields['state'][0],
             sendTime: fields['sendTime'][0],
-            content: fields['content'][0]
+            content: fields['content'][0],
+            page:fields['page'][0]
         };
         mongoDB.update('article', { "_id": ObjectID(id) }, json, function (err, data) {
             if (err) throw err;
-            res.redirect('/admin/blog/blogList')
+            res.redirect('/admin/blog/blogList?page='+json.page)
         })
     });
 });

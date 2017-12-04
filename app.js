@@ -47,4 +47,5 @@ app.use("*",function(req,res){
 
 
 app.listen(3001);
+console.log(md5('1'))
 console.log('server start');

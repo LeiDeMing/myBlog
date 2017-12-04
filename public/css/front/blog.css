@@ -18,3 +18,6 @@
 .layui-main .info > div em:nth-of-type(2) {
     margin: 0 10px;
 }
+.content img{
+    width:90%;
+}

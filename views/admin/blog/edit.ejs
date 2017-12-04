@@ -15,6 +15,7 @@
     <a class="layui-btn layui-btn-small layui-btn-normal" style="position:relative;left:110px;top:-10px;" href="/admin/blog"><i class="layui-icon"></i></a>
     <form class="layui-form" action="/admin/blog/doEdit" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<%=list.id%>" name="id">
+        <input type="hidden" value="<%=page%>" name="page">  
         <div class="layui-form-item">
             <label class="layui-form-label">标题</label>
             <div class="layui-input-block">
