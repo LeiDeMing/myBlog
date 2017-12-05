@@ -1,6 +1,3 @@
-# myBlog
-# git clone https://github.com/Eaststart/myBlog.git
-# cd myBlog
-# npm i
-# http://localhost:3001/admin
+# 采用mongodb+express 开发，现在又图片分类，添加，搜索，博客分类，添加，搜索，设置超级管理员功能。
+# 
 
