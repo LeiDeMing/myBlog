@@ -24,10 +24,30 @@
             </div>
             <%}%>
         </div>
+        <div id="page" class="page"></div>
         <%include ../admin/common/cor.ejs%>
     </div>
+    
 </div>
 
 </body>
+
 </html>
 <% include common/footer.ejs %>
+<script type="text/javascript">
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'page' 
+            ,count: <%=pageCount%> 
+            ,limit:5
+            ,curr:   <%=page%>
+            ,jump: function(obj, first){
+                if(!first){
+                    location.href='http://localhost:3001/?page='+obj.curr;
+                }
+            }
+        });
+    });
+</script>

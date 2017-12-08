@@ -10,12 +10,30 @@ var express=require('express'),
 
 
 router.get('/',function(req,res){
-    mongoDB.findOnSort('article',{"state":"发布"},{},{sendTime:-1},function(err,data){
+    var page = req.query.page || 1;
+    var pageSize = 5;
+    async.parallel({
+        count:function(callback){
+            mongoDB.count('article',{},function(err,data){
+                callback(err,data);
+            });
+        },
+        p:function(callback){
+            mongoDB.findSkip('article',{"state":"发布"},{sendTime:-1},{
+                page,
+                pageSize
+            },function(err,rel){
+                callback(err,rel);
+            })
+        }
+    },function(err,results){
         if(err) throw err;
         res.render('front/index',{
-            list:data
+            list:results.p,
+            page,
+            pageCount:results.count
         });
-    });
+    })
 });
 
 router.use('/blog',blog);
