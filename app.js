@@ -12,12 +12,15 @@ var express=require('express'),
     md5=require('md5'),
     admin=require('./router/admin.js'),
     front=require('./router/front.js'),
-    api=require('./router/api.js');
+    api=require('./router/api.js'),
+    connect=require('connect'),
+    favicon=require('serve-favicon');
 
 app.use('/public', express.static('public'));
 app.use(express.static('public'));
+app.use(favicon(__dirname + '/favicon.ico'));
 //  parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+
 
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -27,6 +30,7 @@ app.all('*', function(req, res, next) {
     next();
 });
 
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 app.use(session({
@@ -47,5 +51,4 @@ app.use("*",function(req,res){
 
 
 app.listen(3001);
-console.log(md5('1'))
 console.log('server start');

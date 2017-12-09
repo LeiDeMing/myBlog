@@ -14,7 +14,7 @@ router.get('/',function(req,res){
     var pageSize = 5;
     async.parallel({
         count:function(callback){
-            mongoDB.count('article',{},function(err,data){
+            mongoDB.count('article',{"state":"发布"},function(err,data){
                 callback(err,data);
             });
         },
