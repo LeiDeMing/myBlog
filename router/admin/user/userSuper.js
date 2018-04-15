@@ -105,6 +105,14 @@ router.post('/doEdit', function (req, res) {
     });
 });
 
+router.get('/remove',function(req,res){
+    var id=req.query.id;
+    if(!id) return ;
+    mongoDB.remove('admin',{"_id":ObjectID(id)},function(err,result){
+        if(err) throw err;
+        res.redirect('/admin/userSuper');
+    });
+});
 
 function idUptate(colle,condiciton,data){
     mongoDB.update(colle,{"_id":condiciton},data,function(err,result){
