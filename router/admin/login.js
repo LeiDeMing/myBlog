@@ -19,7 +19,7 @@ router.get('/',function(req,res){
 router.post('/getLogin',function(req,res){
     var loginData=req.body,
         flag=false;
-    mongoDB.find('admin',loginData.admin,{},function(err,data){
+    mongoDB.find('admin',{"name":loginData.admin},{},function(err,data){
         if(err) throw err;
         for(var x=0;x<data.length;x++){
             if(loginData.admin===data[x].name && md5(loginData.pwd)===data[x].pwd){
