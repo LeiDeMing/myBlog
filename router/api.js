@@ -94,4 +94,22 @@ router.post('/admin',function(req,res){
 	})
 })
 
+router.post('/huada',function(req,res){
+	var temp=req.body;
+	var obj={
+		"msg": "区块节点查询成功！",
+		"data": {
+		  "createTime": "1525779110",
+		  "hash": "b9035bd20c9177f50243fc7fc7f00b0304f214b74ceb3e4201be01a1b8160e88",
+		  "nodeId": "test",
+		  "addr": "test",
+		  "blockSn": temp.blockSn+'',
+		  "nodeName": "test",
+		  "type": "test"
+		},
+		"result": 200
+	  }
+	res.jsonp(obj)
+})
+
 module.exports=router;
