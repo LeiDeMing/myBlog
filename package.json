@@ -14,7 +14,7 @@
   "author": "nei",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.5.0",
+    "async": "^2.6.4",
     "body-parser": "^1.18.2",
     "connect": "^3.6.5",
     "ejs": "^2.5.7",
